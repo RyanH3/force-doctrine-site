@@ -23,6 +23,9 @@ function Header() {
       <div className="text-yellow-400 auto-cols-auto bg-black">
         <nav>
           <div>
+            <p>Force Doctrine</p>
+          </div>
+          <div>
             <Link href="/">Home</Link>
           </div>
           <div>
