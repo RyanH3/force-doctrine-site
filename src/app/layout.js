@@ -20,7 +20,7 @@ export const metadata = {
 function Header() {
   return (
     <header>
-      <div>
+      <div className="text-yellow-400 auto-cols-auto bg-black">
         <nav>
           <div>
             <Link href="/">Home</Link>
@@ -31,7 +31,7 @@ function Header() {
           <div>
             <Link href="/about">About</Link>
           </div>
-          <div>
+          <div className="bg-red-500">
             <Link href="/login">Log in</Link>
           </div>
         </nav>
@@ -44,8 +44,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >
         <Header />
         {children}
