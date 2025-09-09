@@ -9,7 +9,7 @@ export default function Home() {
         layout="fill"
       />
       <h1>Knowledge is power</h1>
-      <p className="text-gray-400">Below is a list of techniques used by wielders of the dark side of the Force. Some are common, some are less common. You may pay to learn how to use any of them, but some come with a cost beyond money.</p>
+      <p className="text-gray-300">Below is a list of techniques used by wielders of the dark side of the Force. Some are common, some are less common. You may pay to learn how to use any of them, but some come with a cost beyond money.</p>
       <div>
         <Link href="/techniques">Techniques</Link>
       </div>
@@ -23,7 +23,7 @@ export default function Home() {
           width={45} height={45}
         />
         <p>Sheev Palpatine</p>
-        <p className="text-gray-400">Former Emperor of the Galactic Empire</p>
+        <p className="text-gray-300">Former Emperor of the Galactic Empire</p>
       </div>
       <div>
         <p>“These techniques help me a lot in my day-to-day”</p>
@@ -33,7 +33,7 @@ export default function Home() {
           width={45} height={45}
         />
         <p>Nim Jong Un</p>
-        <p className="text-gray-400">Supreme Leader of North Dorea</p>
+        <p className="text-gray-300">Supreme Leader of North Dorea</p>
       </div>
       <div>
         <p>“You won’t get away with this. Take this website down immediately.”</p>
@@ -43,7 +43,7 @@ export default function Home() {
           width={45} height={45}
         />
         <p>Obi-Wan Kenobi</p>
-        <p className="text-gray-400">Legendary Jedi Master</p>
+        <p className="text-gray-300">Legendary Jedi Master</p>
       </div>
 
       <img
