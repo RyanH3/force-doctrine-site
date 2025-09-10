@@ -23,7 +23,7 @@ function Header() {
       <div className="text-yellow-400 auto-cols-auto bg-black p-4 fixed top-0 right-0 left-0">
         <p className="float-left m-2">Force Doctrine</p>
         <nav className="flex flex-row-reverse md:[&>*]:mx-4">
-          <Link href="/login"><button className="text-black bg-red-500 hover:bg-red-600 focus:outline-2 focus:outline-offset-2 focus:outline-red-500 active:bg-red-700 rounded-lg m-1 p-1 px-2">Log in</button></Link>
+          <Link href="/login"><button className="text-black bg-red-500 transition duration-300 ease-in-out hover:bg-yellow-400 active:bg-yellow-500 rounded-lg m-1 p-1 px-2">Log in</button></Link>
           <Link href="/about" className="m-2">About</Link>
           <Link href="/techniques" className="m-2">Techniques</Link>
           <Link href="/" className="m-2">Home</Link>
@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="bg-black">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased pt-18`}
       >
         <Header />
         {children}

@@ -7,11 +7,11 @@ export default function Page() {
       <form>
         <div>
           <label htmlFor="email">Email address:</label>
-          <input className="bg-stone-950 text-gray-400" id="email" type="email" name="email" required/>
+          <input className="outline outline-white text-gray-400" id="email" type="email" name="email" required/>
         </div>
         <div>
           <label htmlFor="password">Password:</label>
-          <input className="bg-stone-950 text-gray-400" id="password" type="password" name="password"/>
+          <input className="outline outline-white text-gray-400" id="password" type="password" name="password"/>
         </div>
         <button type="submit">
           Sign in

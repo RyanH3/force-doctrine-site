@@ -22,19 +22,19 @@ export default function Page() {
       <form>
         <div>
           <label htmlFor="first-name">First Name:</label>
-          <input className="bg-stone-950 text-gray-400" id="first-name" type="text" name="first-name"/>
+          <input className="outline outline-white text-gray-400" id="first-name" type="text" name="first-name"/>
         </div>
         <div>
           <label htmlFor="last-name">Last Name:</label>
-          <input className="bg-stone-950 text-gray-400" id="last-name" type="text" name="last-name"/>
+          <input className="outline outline-white text-gray-400" id="last-name" type="text" name="last-name"/>
         </div>
         <div>
           <label htmlFor="email">Email address:</label>
-          <input className="bg-stone-950 text-gray-400" id="email" type="email" name="email" required/>
+          <input className="outline outline-white text-gray-400" id="email" type="email" name="email" required/>
         </div>
         <div>
           <label htmlFor="message">Your message:</label>
-          <textarea className="bg-stone-950 text-gray-400" id="message" name="message" rows={4} required></textarea>
+          <textarea className="outline outline-white text-gray-400" id="message" name="message" rows={4} required></textarea>
         </div>
         <button type="submit">
           Submit

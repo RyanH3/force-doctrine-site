@@ -9,7 +9,7 @@ function Technique({ imageSource, imageAlt, title, description, price }) {
         <h1>{title}</h1>
         <p className="text-gray-300">{description}</p>
         <p>{price}</p>
-        <button>
+        <button className="text-black bg-red-500 transition duration-300 ease-in-out hover:bg-yellow-400 active:bg-yellow-500 rounded-lg m-1 p-1 px-2">
           Purchase
         </button>
       </div>
