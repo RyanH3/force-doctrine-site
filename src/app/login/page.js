@@ -17,7 +17,7 @@ export default function Page() {
           Sign in
         </button>
         <div>
-          <Link href="/register">Don't have an account? Register</Link>
+          <Link href="/register">Don&apos;t have an account? Register</Link>
         </div>
       </form>
     </main>
