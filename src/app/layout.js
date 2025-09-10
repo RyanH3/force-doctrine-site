@@ -20,23 +20,13 @@ export const metadata = {
 function Header() {
   return (
     <header>
-      <div className="text-yellow-400 auto-cols-auto bg-black">
-        <nav>
-          <div>
-            <p>Force Doctrine</p>
-          </div>
-          <div>
-            <Link href="/">Home</Link>
-          </div>
-          <div>
-            <Link href="/techniques">Techniques</Link>
-          </div>
-          <div>
-            <Link href="/about">About</Link>
-          </div>
-          <div className="bg-red-500">
-            <Link href="/login">Log in</Link>
-          </div>
+      <div className="text-yellow-400 auto-cols-auto bg-black p-4 fixed top-0 right-0 left-0">
+        <p className="float-left m-2">Force Doctrine</p>
+        <nav className="flex flex-row-reverse md:[&>*]:mx-4">
+          <Link href="/login"><button className="text-black bg-red-500 hover:bg-red-600 focus:outline-2 focus:outline-offset-2 focus:outline-red-500 active:bg-red-700 rounded-lg m-1 p-1 px-2">Log in</button></Link>
+          <Link href="/about" className="m-2">About</Link>
+          <Link href="/techniques" className="m-2">Techniques</Link>
+          <Link href="/" className="m-2">Home</Link>
         </nav>
       </div>
     </header>
@@ -45,9 +35,9 @@ function Header() {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-black">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
         {children}
