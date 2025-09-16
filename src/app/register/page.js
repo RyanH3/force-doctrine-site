@@ -1,15 +1,29 @@
 export default function Page() {
+  async function submitForm(formData) {
+    "use server"
+    const formFields = {
+      userName: formData.get("username"),
+      email: formData.get("email"),
+      password: formData.get("password")
+    };
+
+    var alertText = "Username: " + formFields.userName + "\n" +
+                    "Email: " + formFields.email + "\n" +
+                    "Password: "+ formFields.password
+    
+    console.log(alertText);
+  }
+  
   return (
-    <main className="bg-black text-yellow-400">
-      <h1>Register</h1>
-      <form className="grid grid-cols-1 grid-rows-7">
+    <main className="flex font-sans bg-black text-yellow-400 place-content-center">
+      <form className="grid grid-cols-1 grid-rows-7 items-end max-w-[20vw] mt-[6vw]" action={submitForm}>
         <label htmlFor="username">Username:</label>
-        <input className="outline outline-white text-gray-400" id="username" type="text" name="username"/>
+        <input className="mb-[1vw] outline outline-white rounded-lg text-gray-400" id="username" type="text" name="username"/>
         <label htmlFor="email">Email address:</label>
-        <input className="outline outline-white text-gray-400" id="email" type="email" name="email" required/>
+        <input className="mb-[1vw] outline outline-white rounded-lg text-gray-400" id="email" type="email" name="email" required/>
         <label htmlFor="password">Password:</label>
-        <input className="outline outline-white text-gray-400" id="password" type="password" name="password"/>
-        <button type="submit" className="text-black bg-red-500 transition duration-300 ease-in-out hover:bg-yellow-400 active:bg-yellow-500 rounded-lg m-1 p-1 px-2">
+        <input className="mb-[1vw] outline outline-white rounded-lg text-gray-400" id="password" type="password" name="password"/>
+        <button type="submit" className="text-black bg-red-500 transition duration-300 ease-in-out hover:bg-yellow-400 active:bg-yellow-500 rounded-lg p-1 px-2">
           Sign up
         </button>
       </form>

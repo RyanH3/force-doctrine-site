@@ -18,10 +18,10 @@ function Technique({ imageSource, imageAlt, title, description, price }) {
 
 export default function Page() {
   return (
-    <div className="flex flex-col bg-black text-yellow-400">
+    <div className="font-sans flex flex-col bg-black text-yellow-400">
       <div className="bg-[url(/TempImage.jpg)] text-center">
-        <h1>Secret Techniques</h1>
-        <p className="text-gray-300">So you are a particularly learned and observant student of the dark side. Welcome. These are techniques I do not yet fully understand, and therefore cannot openly endorse. Please use them with extreme care.</p>
+        <h1 className="text-5xl font-bold mt-[10vw]">Secret Techniques</h1>
+        <p className="text-gray-300 mx-[24vw] mb-[12vw]">So you are a particularly learned and observant student of the dark side. Welcome. These are techniques I do not yet fully understand, and therefore cannot openly endorse. Please use them with extreme care.</p>
       </div>
       
       <div className="grid grid-cols-2 grid-rows-3 place-items-center">
