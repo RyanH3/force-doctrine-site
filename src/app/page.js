@@ -2,19 +2,19 @@ import Link from "next/link";
 
 function ApprenticeReview({ quote, imageSource, imageAlt, userName, userSubtitle }) {
   return (
-    <div className="outline outline-white rounded-lg w-[22vw] h-[14vw]">
-      <div className="h-[8vw] m-[2vw] mb-0">
-        <p>{quote}</p>
+    <div className="outline outline-white rounded-lg w-[88vw] h-[56vw] mb-[8vw] md:outline outline-white rounded-lg md:w-[22vw] md:h-[14vw] md:mb-[0vw]">
+      <div className="h-[24vw] m-[8vw] md:h-[6vw] md:m-[2vw]">
+        <p className="text-xl md:text-[1.5vw]">{quote}</p>
       </div>
       
-      <div className="grid grid-cols-[max-content_1fr] grid-rows-2 ml-[1.5vw]">
+      <div className="grid grid-cols-[max-content_1fr] grid-rows-2 ml-[6vw] md:ml-[1.5vw]">
         <img
           src={`${imageSource}`}
           alt={`${imageAlt}`}
-          className="row-span-2 w-[3vw] mr-[1vw]"
+          className="row-span-2 w-[12vw] mr-[4vw] md:row-span-2 md:w-[3vw] md:mr-[1vw]"
         />
-        <p className="text-xs">{userName}</p>
-        <p className="text-xs text-gray-300">{userSubtitle}</p>
+        <p className="text-xs md:text-[0.9vw]">{userName}</p>
+        <p className="text-xs text-gray-300 md:text-[0.9vw]">{userSubtitle}</p>
       </div>
     </div>
   );
@@ -37,34 +37,30 @@ export default function Home() {
       </div>
       
       <h2 className="text-4xl font-semibold py-[3vw] mx-[9vw]">Apprentice reviews</h2>
-      <div className="flex flex-col md:flex-row gap-[2vw] justify-center">
+      <div className="flex flex-col place-items-center md:flex-row gap-[2vw] justify-center">
         <ApprenticeReview quote='“I wish these techniques were this accessible when I was growing up”' imageSource="/TempImage.jpg" imageAlt="Emperor Palpatine when he was a chancellor" userName="Sheev Palpatine" userSubtitle="Former Emperor of the Galactic Empire"/>
         <ApprenticeReview quote='“These techniques help me a lot in my day-to-day”' imageSource="/TempImage.jpg" imageAlt="A smartly dressed Korean woman" userName="Nim Jong Un" userSubtitle="Supreme Leader of North Dorea"/>
         <ApprenticeReview quote='“You won’t get away with this. Take this website down immediately.”' imageSource="/TempImage.jpg" imageAlt="Obi-Wan Kenobi as a Force Ghost" userName="Obi-Wan Kenobi" userSubtitle="Legendary Jedi Master"/>
       </div>
       
-      <div className="flex flex-row justify-center gap-x-[18vw] mt-[12vw] mb-[4vw]">
+      <div className="flex flex-row justify-center gap-x-[4.5vw] mt-[12vw] mb-[4vw] [&>*]:w-[20vw] md:gap-x-[18vw] md:mt-[12vw] md:mb-[4vw] md:[&>*]:w-[5vw]">
         <img
           src="/TempImage.jpg"
           alt="The Sith Eternal crest"
-          className="w-[5vw]"
         />
         <Link href="/secret-techniques" className="hover:shadow-xl shadow-yellow-400 transition duration-600 ease-in-out">
           <img
             src="/TempImage.jpg"
             alt="The Sith emblem"
-            className="w-[5vw]"
           />
         </Link>
         <img
           src="/TempImage.jpg"
           alt="The Sith Empire logo"
-          className="w-[5vw]"
         />
         <img
           src="/TempImage.jpg"
           alt="The Sith Order symbol"
-          className="w-[5vw]"
         />
       </div>
     </div>
