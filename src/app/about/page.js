@@ -18,9 +18,8 @@ export default function Page() {
 
   return (
     <main className="font-sans flex flex-col bg-black text-yellow-400 p-[6vw]">
-      
-      <div className="flex flex-row text-gray-300 mb-[4vw]">  
-        <div className="max-w-[36vw] mr-[13vw]">
+      <div className="text-gray-300 mb-[4vw] md:flex flex-row text-gray-300 mb-[4vw]">  
+        <div className="md:max-w-[36vw] md:mr-[13vw]">
           <h1 className="mb-[1vw] text-5xl text-yellow-400 font-bold">About the Instructor</h1>
           <p>I have over a millennium of experience practicing and experimenting with the dark side of the Force.</p>
           <br/>
@@ -28,7 +27,7 @@ export default function Page() {
           <br/>
           <p>When I discovered the dark side, I asked my parents about it. They could only teach me its dangers, so I was mostly self-taught. Due to a carelessly executed technique, I was cursed with an extended life span and lost everyone I loved to time.</p>
         </div>
-        <div className="w-[35vw] object-fill">
+        <div className="mt-[2vw] md:w-[35vw] object-fill">
           <img
             src="/TempImage.jpg"
             alt="A portrait of Tryphowon"
@@ -36,7 +35,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="max-w-[36vw]">
+      <div className="md:max-w-[36vw]">
         <h2 className="mb-[1vw] text-2xl font-semibold">Contact me</h2>
         <p className="text-gray-300 mb-[1vw]">For clarification of concepts, ideas for new techniques, or if you want to hang out</p>
 
