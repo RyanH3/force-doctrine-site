@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="bg-black text-yellow-400 flex flex-col font-sans">
       <img
-        src="/TempImage.jpg"
+        src="/Images/Red Aurora Borealis.jpg"
         alt="Cool red, shadowy image that perfectly encapsulates the dark side of the Force"
         layout="fill"
       />
@@ -38,28 +38,28 @@ export default function Home() {
       
       <h2 className="text-4xl font-semibold py-[3vw] mx-[9vw]">Apprentice reviews</h2>
       <div className="flex flex-col place-items-center md:flex-row gap-[2vw] justify-center">
-        <ApprenticeReview quote='“I wish these techniques were this accessible when I was growing up”' imageSource="/TempImage.jpg" imageAlt="Emperor Palpatine when he was a chancellor" userName="Sheev Palpatine" userSubtitle="Former Emperor of the Galactic Empire"/>
-        <ApprenticeReview quote='“These techniques help me a lot in my day-to-day”' imageSource="/TempImage.jpg" imageAlt="A smartly dressed Korean woman" userName="Nim Jong Un" userSubtitle="Supreme Leader of North Dorea"/>
-        <ApprenticeReview quote='“You won’t get away with this. Take this website down immediately.”' imageSource="/TempImage.jpg" imageAlt="Obi-Wan Kenobi as a Force Ghost" userName="Obi-Wan Kenobi" userSubtitle="Legendary Jedi Master"/>
+        <ApprenticeReview quote='“I wish these techniques were this accessible when I was growing up”' imageSource="/Images/Sheev Palpatine Profile Picture.jpg" imageAlt="Emperor Palpatine when he was a chancellor" userName="Sheev Palpatine" userSubtitle="Former Emperor of the Galactic Empire"/>
+        <ApprenticeReview quote='“These techniques help me a lot in my day-to-day”' imageSource="/Images/Nim Jong Un Profile Picture.jpg" imageAlt="A smartly dressed Korean woman" userName="Nim Jong Un" userSubtitle="Supreme Leader of North Dorea"/>
+        <ApprenticeReview quote='“You won’t get away with this. Take this website down immediately.”' imageSource="/Images/Obi-Wan Kenobi Profile Picture.jpg" imageAlt="Obi-Wan Kenobi as a Force Ghost" userName="Obi-Wan Kenobi" userSubtitle="Legendary Jedi Master"/>
       </div>
       
       <div className="flex flex-row justify-center gap-x-[4.5vw] mt-[12vw] mb-[4vw] [&>*]:w-[20vw] md:gap-x-[18vw] md:mt-[12vw] md:mb-[4vw] md:[&>*]:w-[5vw]">
         <img
-          src="/TempImage.jpg"
+          src="/Images/Sith Eternal Crest.png"
           alt="The Sith Eternal crest"
         />
-        <Link href="/secret-techniques" className="hover:shadow-xl shadow-yellow-400 transition duration-600 ease-in-out">
+        <Link href="/secret-techniques" className="hover:shadow-xl shadow-yellow-400 transition duration-600 ease-in-out rounded-lg">
           <img
-            src="/TempImage.jpg"
+            src="/Images/Sith Emblem.png"
             alt="The Sith emblem"
           />
         </Link>
         <img
-          src="/TempImage.jpg"
+          src="/Images/Sith Empire Logo.png"
           alt="The Sith Empire logo"
         />
         <img
-          src="/TempImage.jpg"
+          src="/Images/Sith Order Symbol.png"
           alt="The Sith Order symbol"
         />
       </div>

@@ -27,9 +27,9 @@ export default function Page() {
           <br/>
           <p>When I discovered the dark side, I asked my parents about it. They could only teach me its dangers, so I was mostly self-taught. Due to a carelessly executed technique, I was cursed with an extended life span and lost everyone I loved to time.</p>
         </div>
-        <div className="mt-[2vw] md:w-[35vw] object-fill">
+        <div className="mt-[2vw] md:w-[20vw] md:ml-[5vw] object-fill">
           <img
-            src="/TempImage.jpg"
+            src="/Images/Tryphowon.png"
             alt="A portrait of Tryphowon"
           />
         </div>
