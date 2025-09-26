@@ -11,7 +11,7 @@ function ApprenticeReview({ quote, imageSource, imageAlt, userName, userSubtitle
         <img
           src={`${imageSource}`}
           alt={`${imageAlt}`}
-          className="row-span-2 w-[12vw] mr-[4vw] md:row-span-2 md:w-[3vw] md:mr-[1vw]"
+          className="row-span-2 w-[12vw] mr-[4vw] rounded-lg md:row-span-2 md:w-[3vw] md:mr-[1vw]"
         />
         <p className="text-xs md:text-[0.9vw]">{userName}</p>
         <p className="text-xs text-gray-300 md:text-[0.9vw]">{userSubtitle}</p>

@@ -12,6 +12,7 @@ function Technique({ imageSource, imageAlt, title, description, price }) {
         src={`${imageSource}`}
         alt={`${imageAlt}`}
         layout="fill"
+        className="rounded-lg"
       />
       <h1>{title}</h1>
       <p className="text-gray-300">{description}</p>

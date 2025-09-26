@@ -31,6 +31,7 @@ export default function Page() {
           <img
             src="/Images/Tryphowon.webp"
             alt="A portrait of Tryphowon"
+            className="rounded-lg"
           />
         </div>
       </div>
