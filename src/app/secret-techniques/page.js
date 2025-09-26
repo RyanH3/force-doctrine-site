@@ -26,7 +26,7 @@ function Technique({ imageSource, imageAlt, title, description, price }) {
 export default function Page() {
   return (
     <div className="font-sans flex flex-col bg-black text-yellow-400">
-      <div className="bg-contain bg-[url(/Images/Secret_Force_Techniques_Banner.png)] text-center">
+      <div className="bg-contain bg-[url(/Images/Secret_Force_Techniques_Banner.webp)] text-center">
         <h1 className="text-5xl font-bold mt-[10vw]">Secret Techniques</h1>
         <p className="text-gray-300 mx-[6vw] md:mx-[24vw] mb-[12vw]">So you are a particularly learned and observant student of the dark side. Welcome. These are techniques I do not yet fully understand, and therefore cannot openly endorse. Please use them with extreme care.</p>
       </div>

@@ -26,7 +26,7 @@ function Technique({ imageSource, imageAlt, title, description, price }) {
 export default function Page() {
   return (
     <div className="font-sans flex flex-col bg-black text-yellow-400">
-      <div className="bg-contain bg-[url(/Images/Force_Techniques_Banner.png)] text-center">
+      <div className="bg-contain bg-[url(/Images/Force_Techniques_Banner.webp)] text-center">
         <h1 className="text-5xl font-bold mt-[10vw]">Force Techniques</h1>
         <p className="text-gray-300 mx-[6vw] md:mx-[24vw] mb-[14vw]">These are some of the Force techniques I rate highly. I learned some and invented others. Use them at your own risk.</p>
       </div>

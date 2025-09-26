@@ -45,21 +45,21 @@ export default function Home() {
       
       <div className="flex flex-row justify-center gap-x-[4.5vw] mt-[12vw] mb-[4vw] [&>*]:w-[20vw] md:gap-x-[18vw] md:mt-[12vw] md:mb-[4vw] md:[&>*]:w-[5vw]">
         <img
-          src="/Images/Sith Eternal Crest.png"
+          src="/Images/Sith Eternal Crest.webp"
           alt="The Sith Eternal crest"
         />
         <Link href="/secret-techniques" className="hover:shadow-xl shadow-yellow-400 transition duration-600 ease-in-out rounded-lg">
           <img
-            src="/Images/Sith Emblem.png"
+            src="/Images/Sith Emblem.webp"
             alt="The Sith emblem"
           />
         </Link>
         <img
-          src="/Images/Sith Empire Logo.png"
+          src="/Images/Sith Empire Logo.webp"
           alt="The Sith Empire logo"
         />
         <img
-          src="/Images/Sith Order Symbol.png"
+          src="/Images/Sith Order Symbol.webp"
           alt="The Sith Order symbol"
         />
       </div>

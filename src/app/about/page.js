@@ -29,7 +29,7 @@ export default function Page() {
         </div>
         <div className="mt-[2vw] md:w-[20vw] md:ml-[5vw] object-fill">
           <img
-            src="/Images/Tryphowon.png"
+            src="/Images/Tryphowon.webp"
             alt="A portrait of Tryphowon"
           />
         </div>
