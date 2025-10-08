@@ -3,11 +3,12 @@ export const dynamic = "force-dynamic";
 import { createClient } from '../../../utils/supabase/server.ts';
 
 export default async function Page() {
-  "use server";
-  const supabase = createClient();
+  
   
   async function submitForm(formData) {
     "use server";
+    const supabase = createClient();
+    
     const formFields = {
       userName: formData.get("username"),
       email: formData.get("email"),
@@ -25,7 +26,6 @@ export default async function Page() {
       .insert([
         { name: formFields.userName, email: formFields.email, password: formFields.password }
       ])
-      .select()
   };
   
   return (
