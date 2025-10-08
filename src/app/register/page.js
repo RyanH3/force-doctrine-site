@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
-import { createClient } from '../../../utils/supabase/server.ts';
 
+import { createClient } from '../../../utils/supabase/server.ts';
 
 export default async function Page() {
   const supabase = createClient();
