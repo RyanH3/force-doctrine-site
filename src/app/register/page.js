@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic";
 import { createClient } from '../../../utils/supabase/server.ts';
 
 export default async function Page() {
+  "use server";
   const supabase = createClient();
   
   async function submitForm(formData) {
