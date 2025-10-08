@@ -1,4 +1,4 @@
-import { createClient } from '@/force-doctrine-site/src/app/utils/supabase/server.ts';
+import { createClient } from '@/force-doctrine-site/utils/supabase/server.ts';
 
 
 export default async function Page() {
