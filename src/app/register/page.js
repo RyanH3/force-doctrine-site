@@ -5,16 +5,6 @@ import { createClient } from '../../../utils/supabase/server.ts';
 export default async function Page() {
   const supabase = createClient();
   
-  async function insertUser(formFields) {
-    "use server"
-    const { data, error } = await supabase
-      .from('users')
-      .insert([
-        { name: formFields.userName, email: formFields.email, password: formFields.password }
-      ])
-      .select()
-  };
-  
   async function submitForm(formData) {
     "use server";
     const formFields = {
@@ -29,7 +19,12 @@ export default async function Page() {
     
     console.log(alertText);
 
-    insertUser(formFields);
+    const { data, error } = await supabase
+      .from('users')
+      .insert([
+        { name: formFields.userName, email: formFields.email, password: formFields.password }
+      ])
+      .select()
   };
   
   return (
