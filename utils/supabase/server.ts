@@ -2,10 +2,9 @@ import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
 export async function createClient() {
-  "use server"
   const cookieStore = await cookies()
 
-  return createServerClient(
+  return JSON.parse(JSON.stringify(createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
     {
@@ -26,5 +25,5 @@ export async function createClient() {
         },
       },
     }
-  )
+  )))
 }
