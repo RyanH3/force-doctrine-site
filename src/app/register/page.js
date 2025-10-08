@@ -1,12 +1,11 @@
-import { createClient } from '@/utils/supabase/server';
-
+import { createClient } from '@./utils/supabase/server';
 
 
 export default async function Page() {
   const supabase = createClient();
   
   async function insertUser(inputName, inputEmail, inputPassword) {
-    "use client"
+    "use server"
     const { data, error } = await supabase
       .from('users')
       .insert([
@@ -16,7 +15,7 @@ export default async function Page() {
   };
   
   async function submitForm(formData) {
-    "use client";
+    "use server";
     const formFields = {
       userName: formData.get("username"),
       email: formData.get("email"),
