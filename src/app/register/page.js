@@ -1,6 +1,22 @@
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = 'https://qvsoacwvxrpntwhcehkf.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2c29hY3d2eHJwbnR3aGNlaGtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3Njg4MjksImV4cCI6MjA3NTM0NDgyOX0.T1o6YVz1li6xAy8rLPv8F_9LJZN3R8_WMbz0j10gEUM'
+const supabase = createClient(supabaseUrl, supabaseKey)
+
 export default function Page() {
-  async function submitForm(formData) {
+  async function insertUser(inputName, inputEmail, inputPassword) {
     "use server"
+    const { data, error } = await supabase
+      .from('users')
+      .insert([
+        { name: inputName, email: inputEmail, password: inputPassword }
+      ])
+      .select()
+  };
+  
+  async function submitForm(formData) {
+    "use server";
     const formFields = {
       userName: formData.get("username"),
       email: formData.get("email"),
@@ -9,10 +25,12 @@ export default function Page() {
 
     var alertText = "Username: " + formFields.userName + "\n" +
                     "Email: " + formFields.email + "\n" +
-                    "Password: "+ formFields.password
+                    "Password: "+ formFields.password;
     
     console.log(alertText);
-  }
+
+    insertUser(formFields.userName, formFields.email, formFields.password);
+  };
   
   return (
     <main className="flex font-sans bg-black text-yellow-400 place-content-center">
