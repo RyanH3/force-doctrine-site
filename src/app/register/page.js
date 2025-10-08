@@ -1,13 +1,14 @@
 export const dynamic = "force-dynamic";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 import { createClient } from '@supabase/supabase-js';
 
 export default async function Page() {
   async function submitForm(formData) {
     "use server";
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
-    
     const formFields = {
       userName: formData.get("username"),
       email: formData.get("email"),
@@ -20,7 +21,7 @@ export default async function Page() {
     
     console.log(alertText);
 
-    const { data, error } = await createClient(supabaseUrl, supabaseKey)
+    const { data, error } = await supabase
       .from('users')
       .insert([
         { name: formFields.userName, email: formFields.email, password: formFields.password }
