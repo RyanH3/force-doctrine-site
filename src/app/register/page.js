@@ -6,7 +6,7 @@ export default async function Page() {
   const supabase = createClient();
   
   async function insertUser(inputName, inputEmail, inputPassword) {
-    "use server"
+    "use client"
     const { data, error } = await supabase
       .from('users')
       .insert([
@@ -16,7 +16,7 @@ export default async function Page() {
   };
   
   async function submitForm(formData) {
-    "use server";
+    "use client";
     const formFields = {
       userName: formData.get("username"),
       email: formData.get("email"),
