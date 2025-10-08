@@ -30,7 +30,7 @@ export default async function Page() {
   
   return (
     <main className="flex font-sans bg-black text-yellow-400 place-content-center">
-      <form className="grid grid-cols-1 grid-rows-7 items-end mt-[24vw] md:max-w-[20vw] md:mt-[6vw]" action={submitForm}>
+      <form className="grid grid-cols-1 grid-rows-7 items-end mt-[24vw] md:max-w-[20vw] md:mt-[6vw]" action={() => submitForm()}>
         <label htmlFor="username">Username:</label>
         <input className="mb-[1vw] outline outline-white rounded-lg text-gray-400" id="username" type="text" name="username"/>
         <label htmlFor="email">Email address:</label>
