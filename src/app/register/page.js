@@ -1,10 +1,10 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@/utils/supabase/server';
 
-const supabaseUrl = 'https://qvsoacwvxrpntwhcehkf.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2c29hY3d2eHJwbnR3aGNlaGtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3Njg4MjksImV4cCI6MjA3NTM0NDgyOX0.T1o6YVz1li6xAy8rLPv8F_9LJZN3R8_WMbz0j10gEUM'
-const supabase = createClient(supabaseUrl, supabaseKey)
 
-export default function Page() {
+
+export default async function Page() {
+  const supabase = createClient();
+  
   async function insertUser(inputName, inputEmail, inputPassword) {
     "use server"
     const { data, error } = await supabase
