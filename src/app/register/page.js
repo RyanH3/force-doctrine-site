@@ -1,4 +1,4 @@
-import { createClient } from '@/utils/supabase/server.ts';
+import { createClient } from '/utils/supabase/server.ts';
 
 
 export default async function Page() {
