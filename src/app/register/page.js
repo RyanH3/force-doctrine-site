@@ -6,7 +6,6 @@ export default async function Page() {
   const supabase = createClient();
   
   async function submitForm(formData) {
-    "use server";
     const formFields = {
       userName: formData.get("username"),
       email: formData.get("email"),
