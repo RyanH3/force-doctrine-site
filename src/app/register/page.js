@@ -29,6 +29,7 @@ export default async function Page() {
       .select();
 
     console.log(data);
+    console.log(error);
   };
   
   return (
