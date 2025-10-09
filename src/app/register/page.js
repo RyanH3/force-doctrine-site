@@ -26,8 +26,8 @@ export default async function Page() {
       .insert([
         { name: formFields.userName, email: formFields.email, password: formFields.password }
       ])
-      .select
-      
+      .select();
+
     console.log(data);
   };
   
