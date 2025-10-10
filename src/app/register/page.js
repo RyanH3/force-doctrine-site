@@ -1,10 +1,9 @@
 export const dynamic = "force-dynamic";
+import { createClient } from '@supabase/supabase-js';
+
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
-
 const supabase = createClient(supabaseUrl, supabaseKey);
-
-import { createClient } from '@supabase/supabase-js';
 
 export default async function Page() {
   async function submitForm(formData) {
