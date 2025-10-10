@@ -25,12 +25,26 @@ export default function Page() {
       .from('users')
       .select('password')
       .eq('email', formFields.email);
-
-    console.log(data);
+    
+    // Vercel log
+    if (users.length == 0) {
+      console.log("users is empty.");
+    }
+    else {
+      console.log(users[0].password);
+    }
     console.log(error);
 
     // Display login message or fail message
-    
+    if (users.length == 0) {
+      console.log("Incorrect email");
+    }
+    else if (users[0].password !== formFields.password) {
+      console.log("Incorrect password.");
+    }
+    else {
+      console.log("Login successful!");
+    }
   }
 
   return (
