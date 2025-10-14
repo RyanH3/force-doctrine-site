@@ -1,13 +1,16 @@
+"use client";
 import { createClient } from '@supabase/supabase-js';
 import Link from "next/link";
+import { useState } from "react";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Page() {
+  const [message, setMessage] = useState(null);
+  
   async function submitForm(formData) {
-    "use server"
     // Get data from the form
     const formFields = {
       email: formData.get("email"),
@@ -37,13 +40,13 @@ export default function Page() {
 
     // Display login message or fail message
     if (users.length == 0) {
-      console.log("Incorrect email");
+      setMessage("Incorrect email.");
     }
     else if (users[0].password !== formFields.password) {
-      console.log("Incorrect password.");
+      setMessage("Incorrect password.");
     }
     else {
-      console.log("Login successful!");
+      setMessage("Login successful!");
     }
   }
 
@@ -59,6 +62,9 @@ export default function Page() {
         </button>
         <div className="mt-[1vw]">
           <Link href="/register" className="underline">Don&apos;t have an account? Register</Link>
+        </div>
+        <div>
+          <p className='text-gray-400'>{message}</p>
         </div>
       </form>
     </main>

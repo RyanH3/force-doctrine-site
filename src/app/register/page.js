@@ -1,13 +1,16 @@
+"use client";
 export const dynamic = "force-dynamic";
 import { createClient } from '@supabase/supabase-js';
+import { useRouter } from 'next/navigation';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export default async function Page() {
+export default function Page() {
+  const router = useRouter();
+
   async function submitForm(formData) {
-    "use server";
     const formFields = {
       userName: formData.get("username"),
       email: formData.get("email"),
@@ -29,6 +32,9 @@ export default async function Page() {
 
     console.log(data);
     console.log(error);
+    if (data !== null) {
+      router.push('/login');
+    }
   };
   
   return (
