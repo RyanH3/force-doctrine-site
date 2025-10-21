@@ -1,7 +1,7 @@
 "use client";
 export const dynamic = "force-dynamic";
 import { createClient } from '@supabase/supabase-js';
-import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
@@ -33,7 +33,7 @@ export default function Page() {
     console.log(data);
     console.log(error);
     if (data !== null) {
-      router.push('/login');
+      redirect('/login');
     }
   };
   

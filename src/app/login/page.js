@@ -1,53 +1,13 @@
 "use client";
-import { createClient } from '@supabase/supabase-js';
+import { signup } from '@/app/actions/auth';
 import Link from "next/link";
 import { useState } from "react";
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Page() {
   const [message, setMessage] = useState(null);
   
   async function submitForm(formData) {
-    // Get data from the form
-    const formFields = {
-      email: formData.get("email"),
-      password: formData.get("password")
-    };
-
-    // Create Vercel log
-    var alertText = "Email: " + formFields.email + "\n" +
-                    "Password: "+ formFields.password
-    
-    console.log(alertText);
-
-    // Get password from database by email
-    let { data: users, error } = await supabase
-      .from('users')
-      .select('password')
-      .eq('email', formFields.email);
-    
-    // Vercel log
-    if (users.length == 0) {
-      console.log("users is empty.");
-    }
-    else {
-      console.log(users[0].password);
-    }
-    console.log(error);
-
-    // Display login message or fail message
-    if (users.length == 0) {
-      setMessage("Incorrect email.");
-    }
-    else if (users[0].password !== formFields.password) {
-      setMessage("Incorrect password.");
-    }
-    else {
-      setMessage("Login successful!");
-    }
+    signup(formData);
   }
 
   return (
