@@ -1,4 +1,4 @@
-"use server";
+'use server';
 
 import { createSession } from '@/app/lib/session';
 import { redirect } from 'next/navigation';
@@ -16,7 +16,6 @@ export async function signup(formData) {
     password: formData.get("password")
   };
 
-  // Create Vercel log
   var alertText = "Email: " + formFields.email + "\n" +
                   "Password: " + formFields.password;
   console.log(alertText);
@@ -27,7 +26,6 @@ export async function signup(formData) {
     .select('id, name, email, password')
     .eq('email', formFields.email);
   
-  // Vercel log
   if (user.length == 0) {
     console.log("user is empty.");
   }
@@ -36,7 +34,7 @@ export async function signup(formData) {
   }
   console.log(error);
 
-  // Display login message or fail message
+  // Check if login was successful
   if (user.length == 0) {
     console.log("Incorrect email.");
   }
@@ -48,5 +46,5 @@ export async function signup(formData) {
     console.log('Login successful!');
     await createSession(user[0].id);
     redirect('/');
-  }  
+  }
 }

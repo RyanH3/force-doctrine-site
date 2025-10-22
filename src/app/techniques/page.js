@@ -1,11 +1,7 @@
 "use client"
-import { useState } from "react";
+import TechniqueButton, { addUserPurchase, getUserPurchases } from "@/app/actions/queries";
 
-function Technique({ imageSource, imageAlt, title, description, price }) {
-  const [buttonState, setButtonState] = useState("Unclicked");
-  var buttonClass = (buttonState === "Unclicked") ? "text-black bg-red-500 transition duration-300 ease-in-out hover:bg-yellow-400 active:bg-yellow-500 rounded-lg m-1 p-1 px-2" : "text-black bg-emerald-500 transition duration-300 ease-in-out rounded-lg m-1 p-1 px-2";
-  var buttonText = (buttonState === "Unclicked") ? "Purchase" : "Purchased";
-
+function Technique({ imageSource, imageAlt, title, description, price }) {  
   return (
     <div className="m-[8vw] md:w-[30vw] md:m-[0vw]">
       <img
@@ -17,8 +13,9 @@ function Technique({ imageSource, imageAlt, title, description, price }) {
       <h1>{title}</h1>
       <p className="text-gray-300">{description}</p>
       <p>{price}</p>
-      <button className={buttonClass} onClick={() => setButtonState("Clicked")}>
-        {buttonText}
+      {/*<TechniqueButton techniqueCardName={title}/>*/}
+      <button className="text-black bg-red-500 transition duration-300 ease-in-out hover:bg-yellow-400 active:bg-yellow-500 rounded-lg m-1 p-1 px-2" onClick={() => makePurchase(techniqueCardName)}>
+        Purchase
       </button>
     </div>
   );

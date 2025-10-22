@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import CookieData from '@/app/lib/session';
+import NavButton from '@/app/lib/session';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased pt-[5.5vw]`}
       >
-        <Header buttonText={<CookieData />}/>
+        <Header buttonText={<NavButton />}/>
         {children}
       </body>
     </html>

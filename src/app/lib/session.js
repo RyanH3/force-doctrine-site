@@ -1,6 +1,7 @@
 'use server';
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
+import { makeUserGreeting } from '@/app/actions/queries';
 
 const secretKey = process.env.SESSION_SECRET;
 const encodedKey = new TextEncoder().encode(secretKey);
@@ -67,17 +68,33 @@ export async function logout() {
     redirect('/login');
 }
 
-export default async function CookieData() {
-  var returnCookie = (await cookies()).get('session')?.value;
+export async function getCookieData() {
+  var sessionCookie = (await cookies()).get('session')?.value;
 
-  console.log(returnCookie);
+  console.log(sessionCookie);
 
-  var cookiePresent = (returnCookie);
+  var cookiePresent = (sessionCookie);
 
+  // Get info from the cookie
   if (cookiePresent) {
-    return returnCookie;
+    var decryptedCookie = await decrypt(sessionCookie);
+    var currentUserID = decryptedCookie.userID;
+
+    return currentUserID;
   }
   else {
+    return 'Logged out';
+  }
+}
+
+export default async function NavButton() {
+  // Put username into a greeting
+  var userID = await getCookieData();
+  if (userID == 'Logged out') {
     return 'Login';
+  }
+  else {
+    var userGreeting = makeUserGreeting(userID);
+    return userGreeting;
   }
 }
