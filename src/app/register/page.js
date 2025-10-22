@@ -8,8 +8,6 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Page() {
-  const router = useRouter();
-
   async function submitForm(formData) {
     const formFields = {
       userName: formData.get("username"),
