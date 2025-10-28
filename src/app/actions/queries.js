@@ -1,5 +1,6 @@
+"use server";
 import { createClient } from '@supabase/supabase-js';
-import { getCookieData } from '../lib/session';
+import { getCookieData } from '@/app/lib/session';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
@@ -67,47 +68,8 @@ export async function getUserPurchases(userID) {
       
       techniques.push(technique[0].name);
     }
-
+    
     return techniques;
   }
-}
-
-export async function makePurchase(techniqueName) {
-  var userID = await getCookieData();
-
-  if (userID != "Logged out") {
-    var userPurchases = await getUserPurchases(userID);
-  
-    if (!(userPurchases.includes(techniqueName))) {
-      await addUserPurchase(userID, techniqueName);
-    }
-  }
-}
-
-export default function TechniqueButton({ techniqueCardName }) {
-  var userID = getCookieData(); // needs to await
-  var isClicked = false;
-  var buttonClass;
-  var buttonText;
-
-  if (userID != 'Logged out') {
-    var userPurchases = getUserPurchases(userID); // needs to await
-    isClicked = userPurchases.includes(techniqueCardName);
-  }
-
-  if (!isClicked) {
-    buttonClass = "text-black bg-red-500 transition duration-300 ease-in-out hover:bg-yellow-400 active:bg-yellow-500 rounded-lg m-1 p-1 px-2";
-    buttonText = "Purchase";
-  }
-  else {
-    buttonClass = "text-black bg-emerald-500 transition duration-300 ease-in-out rounded-lg m-1 p-1 px-2";
-    buttonText = "Purchased";
-  }
-
-  return (
-    <button className={buttonClass} onClick={() => makePurchase(techniqueCardName)}>
-      {buttonText}
-    </button>
-  );
 }
 

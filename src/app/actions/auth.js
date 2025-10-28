@@ -35,16 +35,19 @@ export async function signup(formData) {
   console.log(error);
 
   // Check if login was successful
+  var returnMessage;
   if (user.length == 0) {
-    console.log("Incorrect email.");
+    returnMessage = "Incorrect email.";
   }
   else if (user[0].password !== formFields.password) {
-    console.log("Incorrect password.");
+    returnMessage = "Incorrect password.";
   }
   else {
     console.log(user);
-    console.log('Login successful!');
+    returnMessage = 'Login successful!';
     await createSession(user[0].id);
     redirect('/');
   }
+  
+  return returnMessage;
 }

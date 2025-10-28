@@ -7,7 +7,8 @@ export default function Page() {
   const [message, setMessage] = useState(null);
   
   async function submitForm(formData) {
-    signup(formData);
+    var returnMessage = await signup(formData);
+    setMessage(returnMessage);
   }
 
   return (
