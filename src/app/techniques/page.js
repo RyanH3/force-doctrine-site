@@ -67,7 +67,17 @@ export default function Page() {
 
   // Loading page
   if (isLoading) {
-    return <div>Loading...</div>
+    return ( 
+    <div className="bg-black">
+      <p className="bg-black h-[24vh] md:h-[17vh]"></p>
+      <img
+        src={"/Images/Force Doctrine Logo.png"}
+        alt={"Tryphowon's crest"}
+        layout="fill"
+        className="bg-black place-self-center animate-spin w-[30vh] md:w-[30vw]"
+      />
+    </div>
+    );
   }
 
   return (
