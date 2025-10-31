@@ -3,9 +3,11 @@ import Link from "next/link";
 import { makeUserGreeting } from '@/app/actions/queries';
 import { useEffect, useState } from "react";
 import { getCookieData } from "@/app/lib/session";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [buttonText, setButtonText] = useState("Login");
+  const pathname = usePathname();
 
   useEffect(() => {
     async function setNavButtonText() {
@@ -20,7 +22,8 @@ export default function Header() {
       }
     }
     setNavButtonText();
-  });
+  }, [pathname]);
+  
   return (
     <header>
       <div className="flex flex-row font-sans text-yellow-400 auto-cols-auto items-center bg-black px-[1vw] py-[2vw] fixed top-0 right-0 left-0">
