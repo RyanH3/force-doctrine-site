@@ -1,10 +1,10 @@
 'use server';
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
-import { makeUserGreeting } from '@/app/actions/queries';
 
 const secretKey = process.env.SESSION_SECRET;
 const encodedKey = new TextEncoder().encode(secretKey);
+const SESSION_TIME = 60 * 1000;
 
 export async function encrypt(payload) {
     return new SignJWT(payload)
@@ -26,7 +26,7 @@ export async function decrypt(session) {
 }
 
 export async function createSession(userID) {
-    const expiresAt = new Date(Date.now() + 60 * 1000);
+    const expiresAt = new Date(Date.now() + SESSION_TIME);
     const session = await encrypt({ userID, expiresAt });
     const cookieStore = await cookies();
 
@@ -84,17 +84,5 @@ export async function getCookieData() {
   }
   else {
     return 'Logged out';
-  }
-}
-
-export default async function NavButton() {
-  // Put username into a greeting
-  var userID = await getCookieData();
-  if (userID == 'Logged out') {
-    return 'Login';
-  }
-  else {
-    var userGreeting = makeUserGreeting(userID);
-    return userGreeting;
   }
 }
