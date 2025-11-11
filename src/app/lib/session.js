@@ -4,13 +4,13 @@ import { cookies } from 'next/headers';
 
 const secretKey = process.env.SESSION_SECRET;
 const encodedKey = new TextEncoder().encode(secretKey);
-const SESSION_TIME = 60 * 1000;
+const SESSION_TIME = 24 * 60 * 60 * 1000;
 
 export async function encrypt(payload) {
     return new SignJWT(payload)
         .setProtectedHeader({ alg: 'HS256' })
         .setIssuedAt()
-        .setExpirationTime('1m')
+        .setExpirationTime('1d')
         .sign(encodedKey);
 }
 
