@@ -9,7 +9,7 @@ function ContactConfirmation({ name, email, message, isSubmitted }) {
           mt-[6vw] md:w-[36vw] md:max-h-[24vw] md:ml-[6vw] md:mt-[6vw]
           `}>
       <h2 className="bg-red-500 p-[1vw] mb-[1vw] text-2xl font-semibold">Thank you, {name}</h2>
-      <p className="pl-[1vw] pr-[1vw] pb-[1vw] text-gray-300 mb-[1vw]">Your message,<br/><br/>"{message}"<br/><br/>is being sent to me telepathically from {email}.</p>
+      <p className="pl-[1vw] pr-[1vw] pb-[1vw] text-gray-300 mb-[1vw]">Your message,<br/><br/>&quot;{message}&quot;<br/><br/>is being sent to me telepathically from {email}.</p>
     </div>
   );
 }
