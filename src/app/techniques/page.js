@@ -2,6 +2,7 @@
 import { addUserPurchase, getUserPurchases } from "@/app/actions/queries";
 import { getCookieData } from "@/app/lib/session";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 async function pressPurchaseButton(techniqueName) {
   // Get userID
@@ -94,6 +95,27 @@ export default function Page() {
         <Technique imageSource="/Images/Force Choke.webp" imageAlt="Tryphowon Force choking himself in the mirror" title="Force Choke" description="This crude technique uses hatred and causes fear. Only use this to cure hiccups." price="$210.00" userPurchases={userPurchases}/>
         <Technique imageSource="/Images/Force Teleport.webp" imageAlt="A cup of spilt water floating over Tryphowon, having been teleported to him" title="Force Teleport" description="Transport an item from one place to another instantaneously using another life form as an anchor. Good communication is vital." price="$360.00" userPurchases={userPurchases}/>
         <Technique imageSource="/Images/Force Hack.webp" imageAlt="Tryphowon giving himself ten thousand Robux on Roblox.com" title="Force Hack" description="Connect to and access any computer system you know the location of. Please do not hack my website." price="$80.00" userPurchases={userPurchases}/>
+      </div>
+
+      <div className="flex flex-row justify-center gap-x-[4.5vw] mt-[12vw] mb-[4vw] [&>*]:w-[20vw] md:gap-x-[18vw] md:mt-[12vw] md:mb-[4vw] md:[&>*]:w-[5vw]">
+        <img
+          src="/Images/Sith Eternal Crest.webp"
+          alt="The Sith Eternal crest"
+        />
+        <Link href="/secret-techniques" className="hover:shadow-xl shadow-yellow-400 transition duration-600 ease-in-out rounded-lg">
+          <img
+            src="/Images/Sith Emblem.webp"
+            alt="The Sith emblem"
+          />
+        </Link>
+        <img
+          src="/Images/Sith Empire Logo.webp"
+          alt="The Sith Empire logo"
+        />
+        <img
+          src="/Images/Sith Order Symbol.webp"
+          alt="The Sith Order symbol"
+        />
       </div>
     </div>
   );
