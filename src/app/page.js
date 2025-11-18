@@ -37,7 +37,7 @@ export default function Home() {
       </div>
       
       <h2 className="text-4xl font-semibold py-[3vw] mx-[9vw]">Apprentice reviews</h2>
-      <div className="flex flex-col place-items-center md:flex-row gap-[2vw] justify-center">
+      <div className="flex flex-col place-items-center mb-[12vw] md:flex-row gap-[2vw] justify-center">
         <ApprenticeReview quote='“I wish these techniques were this accessible when I was growing up”' imageSource="/Images/Sheev Palpatine Profile Picture.jpg" imageAlt="Emperor Palpatine when he was a chancellor" userName="Sheev Palpatine" userSubtitle="Former Emperor of the Galactic Empire"/>
         <ApprenticeReview quote='“These techniques help me a lot in my day-to-day”' imageSource="/Images/Nim Jong Un Profile Picture.jpg" imageAlt="A smartly dressed Korean woman" userName="Nim Jong Un" userSubtitle="Supreme Leader of North Dorea"/>
         <ApprenticeReview quote='“You won’t get away with this. Take this website down immediately.”' imageSource="/Images/Obi-Wan Kenobi Profile Picture.jpg" imageAlt="Obi-Wan Kenobi as a Force Ghost" userName="Obi-Wan Kenobi" userSubtitle="Legendary Jedi Master"/>
