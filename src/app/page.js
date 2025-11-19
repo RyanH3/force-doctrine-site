@@ -42,6 +42,27 @@ export default function Home() {
         <ApprenticeReview quote='“These techniques help me a lot in my day-to-day”' imageSource="/Images/Nim Jong Un Profile Picture.jpg" imageAlt="A smartly dressed Korean woman" userName="Nim Jong Un" userSubtitle="Supreme Leader of North Dorea"/>
         <ApprenticeReview quote='“You won’t get away with this. Take this website down immediately.”' imageSource="/Images/Obi-Wan Kenobi Profile Picture.jpg" imageAlt="Obi-Wan Kenobi as a Force Ghost" userName="Obi-Wan Kenobi" userSubtitle="Legendary Jedi Master"/>
       </div>
+
+      <div className="flex flex-row justify-center gap-x-[4.5vw] mt-[12vw] mb-[4vw] [&>*]:w-[20vw] md:gap-x-[18vw] md:mt-[12vw] md:mb-[4vw] md:[&>*]:w-[5vw]">
+        <img
+          src="/Images/Sith Eternal Crest.webp"
+          alt="The Sith Eternal crest"
+        />
+        <Link href="/secret-techniques" className="hover:shadow-xl shadow-yellow-400 transition duration-600 ease-in-out rounded-lg">
+          <img
+            src="/Images/Sith Emblem.webp"
+            alt="The Sith emblem"
+          />
+        </Link>
+        <img
+          src="/Images/Sith Empire Logo.webp"
+          alt="The Sith Empire logo"
+        />
+        <img
+          src="/Images/Sith Order Symbol.webp"
+          alt="The Sith Order symbol"
+        />
+      </div>
     </div>
   );
 }
