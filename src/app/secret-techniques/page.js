@@ -21,11 +21,20 @@ async function pressPurchaseButton(techniqueName) {
 
 function Technique({ imageSource, imageAlt, title, description, price, userPurchases }) {
   const [buttonState, setButtonState] = useState((userPurchases.includes(title)) ? "Clicked" : "Unclicked");
+  const [isChargeVisible, setIsChargeVisible] = useState(false);
   var buttonClass = (buttonState === "Unclicked") ? "text-black bg-red-500 transition duration-300 ease-in-out hover:bg-yellow-400 active:bg-yellow-500 rounded-lg m-1 p-1 px-2" : "text-black bg-emerald-500 transition duration-300 ease-in-out rounded-lg m-1 p-1 px-2";
   var buttonText = (buttonState === "Unclicked") ? "Purchase" : "Purchased";
+
+  function showCharge() {
+    if (buttonState !== "Clicked") {
+      setIsChargeVisible(true);
+
+      setTimeout(setIsChargeVisible, 0, false);
+    }
+  }
   
   return (
-    <div className="m-[8vw] md:w-[30vw] md:m-[0vw] md:mb-[1vw]">
+    <div className="flex flex-col m-[8vw] md:w-[30vw] md:m-[0vw]">
       <img
         src={`${imageSource}`}
         alt={`${imageAlt}`}
@@ -35,9 +44,13 @@ function Technique({ imageSource, imageAlt, title, description, price, userPurch
       <h1>{title}</h1>
       <p className="text-gray-300">{description}</p>
       <p>{price}</p>
-      <button className={buttonClass} onClick={() => { setButtonState("Clicked"); pressPurchaseButton(title) }}>
-        {buttonText}
-      </button>
+      <div className="flex">
+        <button className={buttonClass} onClick={() => { setButtonState("Clicked"); pressPurchaseButton(title); showCharge() }}>
+          {buttonText}
+        </button>
+        <p className={`grow text-center text-red-500 place-self-center 
+                      ${isChargeVisible ? "opacity-100" : "transition-opacity duration-4000 opacity-0"}`}>-{price} from your bank. Thank you.</p>
+      </div>
     </div>
   );
 }
